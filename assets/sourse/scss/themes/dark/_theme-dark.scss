@@ -1,0 +1,315 @@
+main {
+	background: $primaryColor;
+}
+
+.text,
+.title {
+	color: #e5e5e5;
+}
+
+.btn__styled {
+	background-color: $containerBGColor;
+	color: #ccc;
+	&.btn__circle {
+		box-shadow: 
+		0 0 5px 0 $secondaryColor,
+		0 0 10px 0 $secondaryColor;
+	}
+	&.btn__small {
+		box-shadow: 
+		0 0 5px 0 $secondaryColor,
+		0 0 10px 0 $secondaryColor;
+	}
+	&:hover {
+		color: $hoverText;
+		background-color: $secondaryColor;
+		filter: brightness(.8);
+	}
+	&:focus {
+		outline: 2px solid white;
+	}
+	&:disabled {
+		background-color: #555;
+		color: #ccc;
+		cursor: default;
+		box-shadow: unset;
+		&:hover {
+			box-shadow: unset;
+			background-color: #555;
+			color: #ccc;
+			filter: unset;
+		}
+	}
+}
+
+#marker {
+	background-color: $secondaryColor;
+}
+
+.progressBar {
+	background-color: transparent;
+	& .bar {
+		background-color: $secondaryColor;
+		opacity: .9;
+	}
+}
+
+#likeBtn:focus {
+	outline: 2px solid white;
+}
+
+#mainScreenBtns {
+	#burgerBtn {
+		opacity: .8;
+		& span {
+			background-color: $secondaryColor;
+			&::before,
+			&::after {
+				background-color: inherit;
+			}
+		}
+		&.active span {
+			background-color: transparent;
+			&::before,
+			&::after {
+				background-color: #fff;
+			}
+		}
+		&.active:hover span{
+			background-color: transparent;
+			&::before,
+			&::after {
+				background-color: $containerBGColor;
+			}
+		}
+		&:hover span{
+			background-color: $containerBGColor;
+		}
+		&:disabled {
+			box-shadow: 
+			0 0 5px 0 $secondaryColor,
+			0 0 10px 0 $secondaryColor;
+		}
+	}
+	
+	#settingsBtn {
+		opacity: .8;
+		& span svg {
+			fill: $secondaryColor;
+		}
+		&:hover span svg{
+			fill: $containerBGColor;
+		}
+		&.active span svg {
+			fill: #fff;
+		}
+		&.active:hover span svg {
+			fill: $containerBGColor;
+		}
+	}
+}
+
+
+._toggler {
+	& input {
+		&:checked + span{
+			background-color: $secondaryColor;
+		}
+		&:focus + span {
+			outline: 2px solid white;
+		}
+	}
+	span:before {
+		background-color: $containerBGColor;
+	}
+}
+
+
+.loader__wrapper {
+	background: $primaryColor;
+	.loader > div:after{
+		background-color: $secondaryColor;
+	}
+}
+
+
+
+.row {
+	& > input {
+	border: 0;
+	border-radius: 15px;
+
+	background-color: #222;
+	box-shadow:
+	inset 0 0 5px 0 $secondaryColor;
+		&::placeholder {
+			color: #ccc;
+		}
+		&:focus {
+		outline: 2px solid white;
+		box-shadow:
+		inset 0 0 5px 1px $secondaryColor;
+		}
+		&._error,
+		&._error:focus {
+		box-shadow:
+		inset 0 0 4px red;
+		}
+	}
+	&.big__btn-container {
+		& > .btn__big {
+			border-top: 1px solid $secondaryColor;
+			border-left: 1px solid $secondaryColor;
+			&:first-child {
+				border-left: unset;
+				border-right: 1px solid $secondaryColor;
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+.quiz {
+	background-color: #202020;
+	box-shadow:
+	0 0 7px 0 $secondaryColor,
+	0 0 20px 0 $secondaryColor,
+	0 0 35px 0 $secondaryColor;
+	& .btn__big {
+		border-top: 1px solid $secondaryColor;
+	}
+}
+
+
+
+.select__quiz-container {
+	background-color: #202020;
+	box-shadow:
+	0 0 7px 0 $secondaryColor,
+	0 0 20px 0 $secondaryColor,
+	0 0 40px 0 $secondaryColor;
+}
+.select__quiz-page__container {
+	.select__page {
+		& > li {
+			color: #fff;
+			box-shadow: 0 0 7px $secondaryColor, 0 0 15px $secondaryColor;
+			&.active {
+				color: $primaryColor;
+				background-color: #aaa;
+			}
+		}
+	}
+}
+.select__quiz-toolbar {
+	& .btn__small {
+		border-top: 1px solid $secondaryColor;
+		border-right: 1px solid $secondaryColor;
+		box-shadow: unset;
+		&:last-child {
+			border-right: 0;
+			border-left: 1px solid $secondaryColor;
+		}
+	}
+}
+
+
+
+
+
+.answer__container {
+	.answer {
+		&__label {
+			&:before {
+				background-color: transparent;
+				box-shadow: 0 0 3px 0px $secondaryColor;
+			}
+		}
+		&__input {
+			&:checked ~ .answer__label:before {
+				box-shadow: 0 0 2px 1px $secondaryColor;
+			}
+		}
+
+
+		&.disabled {
+			cursor: default;
+			& .answer__label {
+				cursor: default;
+				&:before {
+					content: '';
+					background: unset;
+					box-shadow: unset;
+					cursor: default;
+				}
+			}
+		}
+
+
+		&.correct {
+			& .answer__label {
+				&:before {
+					content: '';
+					background-color: $secondaryColor;
+					clip-path: polygon(16% 43%, 2% 57%, 33% 88%, 100% 22%, 85% 8%, 33% 60%);
+					border-radius: unset;
+					box-shadow: unset;
+				}
+			}
+		}
+		&.uncorrect {
+			& .answer__label {
+				&:before {
+					content: '';
+					background-color: $secondaryColor;
+					clip-path: polygon(20% 7%, 7% 20%, 37% 50%, 7% 80%, 20% 93%, 50% 63%, 80% 93%, 93% 80%, 63% 50%, 93% 20%, 80% 7%, 50% 37%);
+					border-radius: unset;
+					box-shadow: unset;
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+
+.modal__wrapper {
+	background-color: #22222230;
+	.modal {
+		background-color: $containerBGColor;
+		box-shadow:
+		0 0 10px 2px $secondaryColor,
+		0 0 30px $secondaryColor;
+		& .btn__styled {
+			border-top: 1px solid $secondaryColor;
+		}
+	}
+}
+
+
+
+
+
+.big__btn-container {
+	& > .btn__big {
+	border-left: 1px solid #aaa;
+		&:first-child {
+		border-left: 0;
+		border-right: 1px solid #aaa;
+		}
+	}
+}
+
+
+@keyframes color {
+	from {filter: hue-rotate(0deg)}
+	to {filter: hue-rotate(360deg)}
+}

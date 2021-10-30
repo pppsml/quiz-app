@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz app</title>
+
+
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/themes/light/theme-light.css" id="themeLink">
+
+
+    <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js" defer></script>
+
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-analytics.js" defer></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-firestore.js" defer></script>
+
+    <script src="https://kit.fontawesome.com/3e457c035e.js" crossorigin="anonymous"></script>
+
+
+    <script src="assets/js/vars.min.js" defer></script>
+    <script src="assets/js/firebase.min.js" defer></script>
+    <script src="assets/js/startScreen.min.js" defer></script>
+    <script src="assets/js/selectQuizMenu.min.js" defer></script>
+    <script src="assets/js/constructorScreen.min.js" defer></script>
+    <script src="assets/js/modal.min.js" defer></script>
+    <script src="assets/js/quizScreen.min.js" defer></script>
+</head>
+<body>
+    <noscript>You need to enable JavaScript in browser settings to run this app</noscript>
+    <main>
+
+        <div class="quiz slideIn-bottom">
+            <div class="quiz__container "></div>
+        </div>
+
+        <nav class="select__quiz-container slideIn-left-nav dn"></nav>
+
+        <div id="mainScreenBtns" class="row row__btns">
+            <button id="settingsBtn" class="btn__styled btn__circle" alt="settings">
+                <span>
+                    <svg>
+                        <use href="#settings-cog"></use>
+                    </svg>
+                </span>
+            </button>
+            <button id="burgerBtn" class="btn__styled btn__circle" alt="quiz menu">
+                <span></span>
+            </button>
+        </div> <!-- #mainScreenBtns -->
+
+
+        <div class="modal__wrapper dn" id="modal"></div>
+        <div class="loader__wrapper">
+            <div class="loader"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+
+    </main>
+
+    <!-- svg icons -->
+    <div class="dn">
+        <svg>
+            <symbol id="settings-cog" aria-hidden="true" focusable="false" role="img" alt="settings" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path d="M487.4 315.7l-42.6-24.6c4.3-23.2 4.3-47 0-70.2l42.6-24.6c4.9-2.8 7.1-8.6 5.5-14-11.1-35.6-30-67.8-54.7-94.6-3.8-4.1-10-5.1-14.8-2.3L380.8 110c-17.9-15.4-38.5-27.3-60.8-35.1V25.8c0-5.6-3.9-10.5-9.4-11.7-36.7-8.2-74.3-7.8-109.2 0-5.5 1.2-9.4 6.1-9.4 11.7V75c-22.2 7.9-42.8 19.8-60.8 35.1L88.7 85.5c-4.9-2.8-11-1.9-14.8 2.3-24.7 26.7-43.6 58.9-54.7 94.6-1.7 5.4.6 11.2 5.5 14L67.3 221c-4.3 23.2-4.3 47 0 70.2l-42.6 24.6c-4.9 2.8-7.1 8.6-5.5 14 11.1 35.6 30 67.8 54.7 94.6 3.8 4.1 10 5.1 14.8 2.3l42.6-24.6c17.9 15.4 38.5 27.3 60.8 35.1v49.2c0 5.6 3.9 10.5 9.4 11.7 36.7 8.2 74.3 7.8 109.2 0 5.5-1.2 9.4-6.1 9.4-11.7v-49.2c22.2-7.9 42.8-19.8 60.8-35.1l42.6 24.6c4.9 2.8 11 1.9 14.8-2.3 24.7-26.7 43.6-58.9 54.7-94.6 1.5-5.5-.7-11.3-5.6-14.1zM256 336c-44.1 0-80-35.9-80-80s35.9-80 80-80 80 35.9 80 80-35.9 80-80 80z"></path>
+            </symbol>
+        </svg>
+    </div> <!-- /svg icons -->
+    
+</body>
+</html>

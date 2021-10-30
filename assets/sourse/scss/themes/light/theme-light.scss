@@ -1,0 +1,236 @@
+$containerShadowColor: #999;
+$containerBGColor: #e5e5e5;
+
+
+
+main {
+	background: radial-gradient(at center, $containerBGColor, #bbb);
+}
+
+.text,
+.title {
+	color: #222;
+}
+
+.btn__styled {
+	background-color: #333;
+	color: #ccc;
+	&:hover,
+	&:focus {
+		color: #fff;
+		background-color: #222;
+		box-shadow: 0 0 10px #222;
+	}
+	&:disabled {
+		background-color: #555;
+		color: #ccc;
+		cursor: default;
+		&:hover,
+		&:focus {
+			box-shadow: 0 0 0 0 transparent;
+		}
+	}
+}
+
+#marker {
+	background-color: #222;
+}
+
+.progressBar {
+	background-color: #00000022;
+	& .bar {
+		background-color: #00000066;
+	}
+}
+
+._toggler {
+	input{
+		&:checked + span{
+			background-color: #2196F3;
+		}
+		&:focus + span {
+			outline: 2px solid blue;
+		}
+	}
+	span {
+		background-color: #aaa;
+		&::before {
+			background-color: white;
+		}
+	}
+}
+
+
+#likeBtn {
+	&:focus {
+		outline: 2px solid blue;
+	}
+}
+
+#mainScreenBtns {
+	#burgerBtn {
+		& span {
+			background-color: $containerBGColor;
+			&:before,
+			&:after {
+				background-color: $containerBGColor;
+			}
+		}
+	}
+	
+	#settingsBtn {
+		& span svg {
+			fill: $containerBGColor;
+		}
+	}
+}
+
+.loader__wrapper {
+	background: radial-gradient(at center, $containerBGColor, #bbb);
+	.loader > div:after{
+		background-color: #222;
+	}
+}
+
+
+
+
+
+.row {
+	& > input {
+	border: 0;
+	border-radius: 15px;
+
+	background-color: #fff;
+	box-shadow:
+	inset 0 0 5px 1px #aaa;
+		&:focus {
+		outline: 2px solid #222;
+		}
+		&._error,
+		&._error:focus {
+		box-shadow:
+		inset 0 0 4px red;
+		}
+	}
+}
+
+
+
+
+.quiz {
+	background-color: $containerBGColor;
+	box-shadow: 
+	0 0 7px 0 $containerShadowColor,
+	0 0 20px 0 $containerShadowColor;
+}
+
+
+
+
+.select__quiz-container {
+	background-color: $containerBGColor;
+	box-shadow: 
+	0 0 7px 0 $containerShadowColor,
+	0 0 20px 0 $containerShadowColor;
+	.select__quiz-page__container {
+		.select__page > li {
+			background-color: $containerBGColor;
+			box-shadow: 0 0 7px #999, 0 0 15px #999;
+			&.active {
+				color: $containerBGColor;
+				background-color: #222d;
+			}
+			&:hover {
+				box-shadow: 0 3px 10px #999, 0 4px 20px #999;
+			}
+		}
+	}
+}
+
+
+
+
+
+.answer__container {
+	.answer {
+		&__label {
+			&:before {
+				background-color: transparent;
+				box-shadow: 0 0 2px 0px #222;
+			}
+		}
+		&__input {
+			&:checked ~ .answer__label:before {
+				box-shadow: 0 0 2px 1px #222;
+			}
+		}
+
+
+		&.disabled {
+			cursor: default;
+			& .answer__label {
+				cursor: default;
+				&:before {
+					content: '';
+					background: unset;
+					box-shadow: unset;
+					cursor: default;
+				}
+			}
+		}
+
+
+		&.correct {
+			& .answer__label {
+				&:before {
+					content: '';
+					background-color: #090;
+					clip-path: polygon(16% 43%, 2% 57%, 33% 88%, 100% 22%, 85% 8%, 33% 60%);
+					border-radius: unset;
+					box-shadow: unset;
+				}
+			}
+		}
+		&.uncorrect {
+			& .answer__label {
+				&:before {
+					content: '';
+					background-color: #b00;
+					clip-path: polygon(20% 7%, 7% 20%, 37% 50%, 7% 80%, 20% 93%, 50% 63%, 80% 93%, 93% 80%, 63% 50%, 93% 20%, 80% 7%, 50% 37%);
+					border-radius: unset;
+					box-shadow: unset;
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+
+.modal__wrapper {
+	background-color: #22222230;
+	.modal {
+		background: radial-gradient(at center, $containerBGColor, #ccc);
+		box-shadow:
+		0 0 10px 2px #555,
+		0 0 30px #777;
+	}
+}
+
+
+
+
+
+.big__btn-container {
+	& > .btn__big {
+	border-left: 1px solid #555;
+		&:first-child {
+		border-left: 0;
+		border-right: 1px solid #555;
+		}
+	}
+}

@@ -1,0 +1,35 @@
+$secondaryColor: #4DB3A2;
+$primaryColor: #121212;
+$containerBGColor: #202020;
+$hoverText: #000;
+
+
+
+@import 'theme-dark';
+
+
+main {
+    animation-name: color;
+    animation-timing-function: linear;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes color {
+	from {filter: hue-rotate(0deg)}
+	to {filter: hue-rotate(360deg)}
+}
+
+#colorRow {
+	& .colorThemeEl {
+        animation-name: uncolor;
+        animation-duration: 3s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+	}
+}
+
+@keyframes uncolor {
+    from {filter: hue-rotate(360deg)}
+    to {filter: hue-rotate(0deg)}
+}

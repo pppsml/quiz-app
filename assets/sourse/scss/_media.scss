@@ -1,0 +1,140 @@
+@media (max-width: 1600px) {
+    // select quiz
+    .select__page {
+        grid-template-columns: repeat(6, minmax(120px, 1fr));
+    }
+}
+
+@media (max-width: 1400px) {
+    // quiz
+    .quiz {
+        min-width: 400px;
+        max-width: 525px;
+    }
+
+    // select quiz
+    .select__page {
+        grid-template-columns: repeat(5, minmax(120px, 1fr));
+        grid-template-rows: repeat(6, 1fr);
+    }
+
+    // modal
+    .modal {
+        min-width: 400px;
+        max-width: 525px;
+    }
+}
+
+@media (max-width: 991px) {
+    main {
+        height: 100%;
+    }
+    // text
+    .text,
+    .title {
+        width: 100%;
+        font-size: 22px;
+        font-weight: 500;
+        margin-bottom: 8px;
+    }
+    .text-minimal {
+        margin: -8px 0 8px 0;
+        font-size: 16px;
+        font-weight: 400;
+    }
+    .title {
+        margin-bottom: 8px;
+        font-weight: 700;
+    }
+
+    // select page 
+    .select__page {
+        grid-template-columns: repeat(4, minmax(120px, 1fr));
+        grid-template-rows: repeat(8, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    main {
+        padding: 128px 16px 16px;
+    }
+    // btns
+    .btn__small {
+            min-height: 40px;
+            min-width: 180px;
+            font-size: 14px;
+        }
+
+    #mainScreenBtns {
+        top: 16px;
+        right: 16px;
+        bottom: unset;
+        left: unset;
+    }
+
+    #burgerBtn.active ~ #btn__create, 
+    #burgerBtn.active ~ #btn__startScreen {
+            display: none;
+    }
+
+    li.answer {
+        margin-bottom: 15px;
+    }
+
+
+    .select__page {
+        grid-template-columns: repeat(3, minmax(120px, 1fr));
+        grid-template-rows: repeat(10, 1fr);
+    }
+}
+
+@media (max-width: 575px) {
+    .select__page {
+        grid-template-columns: repeat(2, minmax(120px, 1fr));
+        grid-template-rows: repeat(15, 1fr);
+    }
+}
+
+
+@media (max-width: 432px) {
+    // text
+    .text-minimal {
+        font-size: 14px;
+    }
+
+    // quiz
+    .quiz {
+        min-width: 288px;
+        max-width: 400px;
+    }
+
+    
+    // custom
+    .big__btn-container {
+        & > .btn__big {
+            min-width: unset;
+            min-height: 40px;
+            
+            font-size: 16px;
+        }
+    }
+
+
+    // modal
+    .modal__wrapper {
+        .modal {
+            min-width: 288px;
+            max-width: 400px;
+        }
+    }
+}
+
+
+@media (min-height: 771px) {
+    main {
+        min-height: 100vh;
+    }
+    .modal__wrapper {
+        min-height: 100vh;
+    }
+}
